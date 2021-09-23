@@ -21,28 +21,30 @@
 
 const arrStr1 = ['a', 'b', 'c', 'd'];
 
-const arrStr2 = [arrStr1[3], arrStr1[0], arrStr1[3], arrStr1[0]];
+const arrStr2 = [];
 
+for(let i = 0; i < arrStr1.length; i++){    
+   if(i % 2 == 0){
+      arrStr2[i] = arrStr1[arrStr1.length - 1];
+   }else {
+      arrStr2[i] = arrStr1[0];
+   }
+}
 console.log(arrStr2);
 
 /*Exersize__2*/
 /*2) задан массив ['a', 'b', 'c', 'd']
    получить массив ['d', 'c', 'b', 'a']*/
 
-const arrFirst = ['a', 'b', 'c', 'd'];
-
+const arrFirst = ['a', 'b', 'c', 'd']; 
 const arrSecond = [];
 
- let limit = arrFirst.length;
+ for(let i = arrFirst.length - 1; i >= 0; i--){      
+   
+      console.log(arrFirst[i]);
+   
+}
 
- for(let i = 0; i < limit; i++){
-   arrSecond.length = limit;
-   arrSecond[0] = arrFirst[3],
-   arrSecond[1] = arrFirst[2],
-   arrSecond[2] = arrFirst[1],
-   arrSecond[3] = arrFirst[0];
- }
- console.log(arrSecond);
 
  /*Exersize__3*/
  /*3) задан массив ['a', 'b', 'a', 'b']
@@ -53,11 +55,11 @@ const arrOne = ['a', 'b', 'a', 'b'];
 console.log(arrOne);
 
 for(let i = 0; i < arrOne.length; i++){
-   if(arrOne[i] == 'a'){
-      arrOne[i] = 'b';
-   }else if(arrOne[i] == 'b'){
-      arrOne[i] = 'a';
-   }   
+   if(i % 2 == 0){
+      arrOne[i] = arrOne[arrOne.length - 1];   
+   }else {
+      arrOne[i] = arrOne[arrOne.length - 2]; 
+   }
 }
 console.log(arrOne);
 
@@ -69,7 +71,7 @@ const arrNull = ['a', 'b', 'c', 'd'];
 
 for(let i = 0; i < arrNull.length; i++){
    if(arrNull[i]){
-      arrNull[i] = arrNull[i] + [i + 1];
+      arrNull[i] = `${arrNull[i]}${[i + 1]}`;
    }   
 }
 console.log(arrNull);
@@ -80,9 +82,10 @@ console.log(arrNull);
 
 const arrZen = ['a', 'b', 'c', 'd'];
 
-for(let i = 0; i < arrZen.length; i++){
+for(let i = 0; i <= arrZen.length; i++){
    if(arrZen[i]){
       arrZen[i] = arrZen[i] + arrZen[i + 1];
    }   
 }
+
 console.log(arrZen);
